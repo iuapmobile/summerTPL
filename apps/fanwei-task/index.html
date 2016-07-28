@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="um-win">
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/font-icons.css">
+		<link rel="stylesheet" href="css/iuapmobile.um.css">
+		<script src="js/jquery-2.1.4.min.js" ></script>
+		<script src="js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="js/summer.js" ></script>
+		<script src="js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="js/index.js" ></script>
+		<style>
+			*{ font-size:16px;font-family: arial;}
+			.um-header h3{font-weight:normal;font-size:18px;}
+	  	 #index .um-input-search{padding:0;margin:5px -5px 10px -5px;}
+	  	 #index .um-list .um-list-item-inner:after{border-width:0;}
+	 	#index .um-input-search .form-control{background-position:90% 50%;padding-left:10px;border-radius: 0;border:1px solid #f1f1f1;}
+	 	  #index .um-input-search .form-control:focus{width:100%;}	
+	 	  #index div.day{color:#00f;line-height:35px;font-weight:bold;}
+	 	  #index div.day p.task{color:#ccc;line-height:26px;font-weight:normal;}
+	 	  #index div.titleCreate{ width: 48px;height:35px;margin-right: -3px;float: right;cursor: pointer;font-weight: bold;text-align: center;background: url(img/ic_add_contact.png) center no-repeat;}
+		i.ti-angle-right:before{color:#d7d7d7;}
+		.um-label>div{color:#555;}
+		.um-label.um-box-justify.three{border-bottom:1px solid #dde2e8;}		
+		/*page1*/
+		#page1 div.um-content{padding-left:0;padding-right:0;}
+		#accordion div.head{font-family: '微软雅黑';font-size: 14px;padding:0 10px 0 10px;width: 100%;height: 28px;line-height: 28px;font-weight: bold;border-bottom: 1px #E8E8E8 solid;cursor: pointer;background-color: #F5F5F5;}
+		#accordion div.content{display:none;}
+		.ti-angle-up:before,.ti-angle-down:before{color:#c8c8c8;}
+		#accordion div.content.active{display:block}
+		#accordion div.content table tr td:first-child{font-size:14px;font-family:' 微软雅黑';color: #999;padding-top: 7px;padding-bottom: 7px;padding-left: 8px;}
+		#accordion div.content table tr td:last-child{padding-left:20px;}
+		#accordion div.content table tr td.title{font-weight:bold;}
+		#accordion div.content p{line-height: 26px;padding-left: 10px;font-style: italic;color: #ccc;}	
+		</style>
+	</head>
+	<body>
+		<div class="um-page um-win" id="index">
+			<div id="header" class="um-header">
+				<a href="#" class="um-back">返回</a>
+				<h3>任务</h3>
+			</div>
+			<div id="main" class="um-content">
+				<div class="um-input-search">
+					<input type="search" class="form-control" placeholder="请输入名称或标签搜索">
+				</div>
+				<div class="today day">
+					今天
+						<div class="titleCreate"></div>			
+				</div>
+				<div class="um-label um-box-justify">
+					<div class="title">金融体系完善</div>
+					<div>
+						<span class="um-blue">(0)</span>&nbsp;&nbsp;<i class="ti-angle-right"></i>
+					</div>
+				</div>
+				<div class="um-label um-box-justify">
+					<div class="title">银企合作</div>
+					<div>
+						<span class="um-blue">(0)</span>&nbsp;&nbsp;<i class="ti-angle-right"></i>
+					</div>
+				</div>
+				<div class="um-label um-box-justify three">
+					<div class="title">维森集团2016年市场推广工作</div>
+					<div>
+						<span class="um-blue">(2)</span>&nbsp;&nbsp;<i class="ti-angle-right"></i>
+					</div>
+				</div>
+				<div class="tomorrow day">
+					明天
+						<div class="titleCreate"></div>
+					<p class="task">暂无任务</p>			
+				</div>
+				<div class="tomorrow day">
+					即将
+						<div class="titleCreate"></div>
+					<p class="task">暂无任务</p>			
+				</div>
+				<div class="tomorrow day">
+					不标记
+						<div class="titleCreate"></div>			
+				</div>
+				<div class="um-label um-box-justify">
+					<div class="title">市场开拓工作</div>
+					<div>
+						<span class="um-blue">(2)</span>&nbsp;&nbsp;<i class="ti-angle-right"></i>
+					</div>
+				</div>
+				<div class="um-label um-box-justify">
+					<div class="title">市场信息收集工作</div>
+					<div>
+						<span class="um-blue">(0)</span>&nbsp;&nbsp;<i class="ti-angle-right"></i>
+					</div>
+				</div>
+				<div class="um-label um-box-justify">
+					<div class="title">站外推广工作</div>
+					<div>
+						<span class="um-blue">(0)</span>&nbsp;&nbsp;<i class="ti-angle-right"></i>
+					</div>
+				</div>
+				<div class="um-label um-box-justify three">
+					<div class="title">宣传资料整理工作</div>
+					<div>
+						<span class="um-blue">(0)</span>&nbsp;&nbsp;<i class="ti-angle-right"></i>
+					</div>
+				</div>
+				<div class="tomorrow day">
+					备忘
+						<div class="titleCreate"></div>
+					<p class="task">暂无任务</p>			
+				</div>			
+			</div>
+		</div>	
+		<div class="um-page um-win" id="page1">
+			<div class="um-header" >
+				<a href="#" class="um-back">返回</a>
+				<h3>任务</h3>
+			</div>
+			<div class="um-content">
+				<div id='accordion'>
+				 	 <div class="head">基本信息 <i class="ti-angle-up fr"></i></div>
+				 	 <div class="content active">
+				 	 	<table>
+				 	 		<tbody>
+				 	 			<tr>
+				 	 				<td>名称</td>
+				 	 				<td class="title">金融体系完善</td>
+				 	 			</tr>
+				 	 			<tr>
+				 	 				<td>状态</td>
+				 	 				<td >进行中</td>
+				 	 			</tr>
+				 	 			<tr>
+				 	 				<td>责任人</td>
+				 	 				<td >杨文元</td>
+				 	 			</tr>
+				 	 		</tbody>				 	 		
+				 	 	</table>
+				 	 </div>
+				 	 <div class="head">下级任务 <i class="ti-angle-down fr"></i></div>
+				 	 <div class="content"  > 
+				 	 	<p>没有下级任务</p>
+				 	 </div>
+				 	 <div class="head">辅助信息<i class="ti-angle-down fr"></i></div>
+				 	 <div class="content"  > 
+				 	 	<table>
+				 	 		<tbody>
+				 	 			<tr>
+				 	 				<td>上级任务</td>
+				 	 				<td class='um-blue'>重点项目工作安排</td>
+				 	 			</tr>
+				 	 			<tr>
+				 	 				<td>描述</td>
+				 	 				<td >进行中</td>
+				 	 			</tr>
+				 	 		</tbody>
+				 	 		
+				 	 	</table>
+				 	 </div>
+				 	 <div class="head">相关信息<i class="ti-angle-down fr"></i></div>
+				 	 <div class="content" ><p>没有相关信息</p></div>
+				 	 <div class="head">任务反馈 </div>
+				 	 <div class="content" ><p>没有相关信息</p></div>
+			 	</div>
+			</div>
+			<div class="um-footer">
+				<div class="um-tabbar-foot">
+					<a id="item0" href="#" class="um-footerbar-item"> <i class="ti-comment-alt f20"></i>
+						<div class="um-tabbar-item-text">
+							反馈
+						</div> </a>
+						<a id="item1" href="#" class="um-footerbar-item"> <i class="ti-star f20"></i>
+						<div class="um-tabbar-item-text">
+							关注
+						</div> </a>
+						<a id="item2" href="#" class="um-footerbar-item active"> <i class="ti-check f20"></i>
+						<div class="um-tabbar-item-text">
+							完成
+						</div> </a>
+						<a id="item3" href="#" class="um-footerbar-item"> <i class="ti-trash f20"></i>
+						<div class="um-tabbar-item-text">
+							删除
+						</div> 
+					</a>
+				</div>
+			</div>
+		</div>
+		</div>	
+		<script>
+			function jumpPage(id){
+				UM.page.changePage({target:id});
+			}
+			$('#index div.um-label').click(function(){
+				jumpPage('#page1');
+				
+				var title=$(this).find('.title').html();
+				$('#accordion table td.title').html(title);
+			});
+			
+			$('#accordion div.head').click(function(){
+				$(this).next().slideToggle();
+				$(this).find('i').toggleClass('ti-angle-down');
+				$(this).find('i').toggleClass('ti-angle-up');
+			});
+		</script>
+	</body>		
+</html>

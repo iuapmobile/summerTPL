@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="um-win">
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/font-icons.css">
+		<link rel="stylesheet" href="css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" type="text/css" href="css/iuapmobile.um.listview-2.7.0.css">
+ 		<script src="js/Frameworks/iuapmobile.frameworks.core-2.7.0.js" ></script>
+		<script src="js/summer.js" ></script>
+		<script src="js/jquery-2.1.4.min.js" ></script>
+		<script src="js/Frameworks/iuapmobile.frameworks.ui-2.7.0.js" ></script>
+	 
+		<script type="text/javascript" src="js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="js/Frameworks/iuapmobile.frameworks.listview-2.7.0.js"></script>
+		 <style>
+		 #header{border-width:0;}
+		 .um-header a{color:white;}
+		 .um-header a.um-back:before{border-left: 1px solid #fff;border-bottom: 1px solid #fff;}
+		 .um-header>p{background:#007AFD;line-height:45px;}
+		 #header  .tabs{height:45px;background:#0161c9; padding:0 15px;}	
+		 #header  .um-tabbar > li > a{background:#0161c9;color:#fff;}
+		 #header  .tabs{padding-top:7px;}
+		#header  .tabs ul li a{border-right:2px solid #007AFD;}
+		  #header  .tabs ul li:first-child a{border-left:1px solid #007AFD;}
+		  #header  .um-tabbar > li:first-child > a {border-bottom-left-radius: 2px;border-top-left-radius: 2px;}
+		  #header  .tabs ul li:last-child a{border-left:1px solid #007AFD;}
+		  #header  .um-tabbar > li:last-child > a {border-bottom-right-radius: 2px;border-top-right-radius: 2px;}
+		 #header  .tabs ul li:last-child a{border-right:none;}
+		#header  .um-tabbar > li.active a{background:#007AFD;}
+		 /*搜索框*/
+		#header   .um-input-search{background:#f0f0f0;margin-left:0;}
+		#header    .um-input-search i{position: relative;right:25px;color:#aaa;}
+		#header   .um-input-search .form-control{height:28px;width:80%}
+		#header   .um-input-search .form-control:focus{width:80%;border:2px solid #EBC479;}
+		#main{background:white;}
+		#main>div>p{color:#ccc;font-size:14px;text-align:center;padding:10px 0;}
+		#main>div{display:none;}
+		#main>div.active{display:block;background:white;}
+		/*page1里面的样式*/
+		#page1 .um-header div p.title:before{content: "";display: inline-block;height: 14px;width:14px;border-left: 1px solid white;border-bottom: 1px solid white;transform: rotate(45deg);}
+		 #page1 p.second{font-size: 10px;color: #80b0e4;padding: 0 80px 10px 27px;background-color: #0161c9;}
+		 #page1 div.yinyong{
+		 	display: inline-block;
+		    width: 44px;
+		    border: 1px solid #d5d5d5;
+		    color: #999;
+		    border-radius: 3px;
+		    padding: 4px 0 3px 0;
+		    margin-left: 3px;
+		    text-align: center;
+		    line-height: 10px;
+		 }
+		 #page1 div.um-content>div{display:none;}
+		 #page1 div.um-content>div.active{display:block;}
+		  #page1 div.um-content>div>p{padding:10px 0;text-align:center;font-size:12px;color:#999;}
+		 </style>
+	</head>
+	<body>
+	 <div class="um-page um-win" id="index">
+			<div id="header" class="um-header">
+				<a href="#" class="um-back">返回</a>
+				<p class='um-white tc' >协作</p>
+				<div class="tabs ">
+					<ul class="um-tabbar">
+					    <li class="active" data-tar='.all'><a >全部协作</a></li>
+					    <li  data-tar='.unread'><a >未读协作</a></li>
+					    <li data-tar='.focus'><a >关注协作</a></li>
+					</ul>				
+				</div>
+				<div class="um-input-search h40">
+					<input type="search" class="form-control" placeholder="search...">&nbsp;&nbsp;<span style="font-size: 12px;color: #0161c9;">更多...</span>
+				</div>		
+			</div>
+			<div id="main" class="um-content">
+				 <img src="img/loading.gif" id="load" alt="" style="position:fixed;left:60%;top:50%;z-index: 9999;width:50px;height:50px;margin-left:-70px;display: none"/>
+				<div  class="all active um-listview-wrap"id="listview" > 
+						 <ul class="um-list um-no-active" data-bind="foreach:data"  style="border-width:0;border-image:none;">
+					        <li class="um-listview-row" >
+					            <a class="um-list-item um-swipe-action um-no-icon" style="padding:3px 10px;">
+					                <div class="um-swipe-btns">
+					                    <span class="um-swipe-btn um-delete">删除</span>
+					                </div>
+					                <div class="um-list-item-inner">
+					                    <div class="um-list-item-body" style="border-bottom: 1px solid #f4f4f4;padding:5px 0;line-height: 1.3;">
+					                        <div class="clearfix f16">
+					                            <div class="um-xs-12 tl um-text-overflow">
+					                                <span class="f14 titlename" data-bind="text:company" style="color:#333;"></span> 
+					                            </div>			                            
+					                        </div>
+					                        <div class="clearfix mt5 f12">
+					                            <div class="um-xs-12 tl um-text-overflow pl0">
+					                                <span data-bind="text:order_id" style="color:#777;font-size:10px;"></span>
+					                            </div>
+					                        </div>			                        
+					                    </div>
+					                    <div style='padding-right: 10px;'>
+					                    	<img data-bind="attr:{'src': img}" width=16 alt="" />
+					                    </div> 
+					                </div> 
+								</a>
+					        </li>
+						</ul>		 
+				</div>
+				<div class="unread">
+					 <p>没有数据显示</p>
+				</div>
+				<div class="focus">
+					<p>没有数据显示</p>
+				<div>
+			</div>	 
+	</div>
+	<div class="um-page um-win um-bgc-white" id="page1">
+		<div class="um-header" >
+			<a href="#" class="um-back">返回</a>
+			<p class='um-white tc'>协作</p>
+			<div style="position:relative">
+				<p class="title pl10" style="color:white;background:#0161C9;line-height:36px;">维森篮球联盟</p>
+				<p class="second">创建者: 赵静, 负责人: 赵静, 起止时间:<br /> 2015-06-18 至 2015-06-19</p>	 
+			</div>
+			
+		</div>
+	
+		<div class="um-content ">
+	 		<ul class="um-tabbar um-tabbar-underline">
+				    <li class="active" data-tar='.communicate'><a>相关交流</a></li>
+				    <li data-tar='.aboutme'><a>@与我相关</a></li>
+				    <li data-tar='.participate'><a>参与情况</a></li>
+				     
+			</ul>
+		 
+				<div class="um-media tl  pt10 communicate active">
+					<div class="um-media-left">
+						<img src="img/login.jpg" width=32 class="um-circle" alt="">
+					</div>
+					<div class="um-media-body ">									 
+							<p style="font-size:12px;color:#333;">杨文元 <span style="position:relative;left:400%">1#</span></p>	
+							<p style="font-size:10px;color:#999;">集团总经办 </p>	
+					</div>
+					<div>
+						<p style="font-size:14px;color:#333;padding:10px 0 10px 0;"  >周五篮球走起啊</p> 
+						<div style="font-size:10px;color:#999;">2015年6月18日 11:44&nbsp;&nbsp;&nbsp;&nbsp;
+							<div class="yinyong tr">引用</div>
+							<div class="yinyong tr">评论</div>
+						</div>
+					</div>
+				</div>
+				<div class="aboutme">
+					 <p>没有数据显示</p>
+				</div>
+				<div class="participate">
+					<p>没有数据显示</p>
+				<div>
+		</div>
+	
+		 
+	</div>	
+	<script>  
+		
+		function jumpPage(id){
+			UM.page.changePage({
+				target:id
+			});
+		} 
+		$('#page1 p.title').click(function(){
+			jumpPage('#index');
+		});
+		$('#page1 div.um-content ul.um-tabbar li').click(function(){
+ 
+	 	$(this).addClass('active').siblings('.active').removeClass('active');
+		var tar=$(this).attr('data-tar');
+		$(tar).addClass('active').siblings('.active').removeClass('active');
+		});
+		
+		$('#listview ul').on('click','.um-listview-row',function(e){
+		     	jumpPage('#page1');
+				var title=$(e.currentTarget).find('span[class="titlename"]').html();
+				$('#page1 p.title').html(title); 
+		});     
+            //Knockout绑定
+            var ViewModel = function() {
+                
+            };
+                    
+            var jsonArray = [
+            	{'company':'维森篮球联盟','order_id':'最近更新: 杨文元于2015-06-18 11:44:10回复','img': 'img/xiazai.png'},
+            	{'company':'欢迎我们的新战友！','order_id':'最近更新: 无','img': 'img/xiazai.png'},
+            	{'company':'运动俱乐部分享专区','order_id':'最近更新: 杨文元于2015-06-18 11:40:45回复','img': 'img/xiazai.png'}   	
+            ] ;
+            for(var i=0,len=10;i<len;i++){
+            	jsonArray.push({'company':'公司标准化资料更新区','order_id':'最近更新: 杨文元于2015-06-18 11:29:12回复','img': 'img/xiazai.png'});
+            }
+            
+            var viewModel = new ViewModel();           
+            viewModel.data = ko.observableArray(jsonArray);
+            ko.applyBindings(viewModel);
+
+			//构造控件实例
+           var listview = UM.listview('#listview');
+			
+            //添加控件方法
+            listview.on('pullDown', function(sender) {
+                //这是可以编写列表下拉加载逻辑，参数sender即为当前列表实例对象
+                /* var row = {'company':'中国兵器装备集团公司','order_id':'000000000000','order_status':'待审核','order_money':'1,500','currency':'$','order_date':'2015-01-01','delivery_date':'2015-01-02','contact_name':'小明','contact_tel':'130********','if_store':false, 'memo':'记得及时发货'};
+                viewModel.data.unshift(row);*/
+                sender.refresh(); 
+            });
+            listview.on('pullUp', function(sender) {
+                //这是可以编写列表上拉刷新逻辑，参数sender即为当前列表实例对象
+                /* var row = {'company':'宝钢集团有限公司','order_id':'000000000006','order_status':'待审核','order_money':'2,500','currency':'$','order_date':'2015-01-01','delivery_date':'2015-01-02','contact_name':'小明','contact_tel':'130********','if_store':false, 'memo':'记得及时发货'};
+                viewModel.data.push(row); */
+                sender.refresh(); 
+            });
+            listview.on('itemDelete', function(sender, args) {
+                //这是可以编写行删除逻辑，参数sender即为当前列表实例对象，args对象有2个属性，即rowIndex(行索引)和$target(目标行的jquery对象)
+                /* args.$target.slideUp(500, function() {
+                    var item = viewModel.data()[args.rowIndex];
+                    viewModel.data.remove(item);
+                }); */
+            });
+            listview.on('itemClick', function(sender, args) {
+                //这里可以处理行点击事件，参数sender即为当前列表实例对象，args对象有2个属性，即rowIndex(行索引)和$target(目标行的jquery对象)
+                //alert('您点击了列表第' + (args.rowIndex + 1) + "行！");
+
+            });
+            listview.on('itemSwipeLeft', function(sender, args) {
+                //这里可以处理行左滑事件，参数sender即为当前列表实例对象，args对象有2个属性，即rowIndex(行索引)和$target(目标行的jquery对象)
+                //sender.showItemMenu(args.$target);
+               
+            });
+            listview.on('tapHold', function() {
+                //这里可以处理长按事件
+				//console.log('您长按了列表！');
+            });
+            
+            
+            $('#header ul.um-tabbar li').click(function(){
+ 
+ 	$(this).addClass('active').siblings('.active').removeClass('active');
+	var tar=$(this).attr('data-tar');
+	$(tar).addClass('active').siblings('.active').removeClass('active');
+	});
+    </script>
+	</body>		
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="um-win">
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/font-icons.css">
+		<link rel="stylesheet" href="css/iuapmobile.um.css">
+		<link rel="stylesheet" type="text/css" href="./css/iuapmobile.um.listview-2.7.0.css">
+		<script src="js/jquery-2.1.4.min.js" ></script>
+		<script src="js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="js/summer.js" ></script>
+		<script src="js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<style>
+			* {font-family: Microsoft YaHei, arial;text-shadow: none !important;}
+			.um-header h3{line-height:1.5;font-weight: normal;}
+			#main ul.um-tabbar{border-bottom:1px solid #ddd;margin:10px -15px;}
+			#main ul.um-tabbar li a{font-size:18px;}
+			#main .form-control{background:url(img/search.png) 5px 50% #fff no-repeat;padding-left:10%;height:28px;}
+			#main .innerplus:after{border-width:0;}
+			#main .um-list-item-inner1{position: relative;display: flex;-webkit-box-pack: justify;justify-content:space-between;-webkit-box-align: center;align-items: center;-webkit-box-flex: 1;flex: 1;align-self:stretch;z-index: 1}
+			/*二级页面*/
+			#page1 div.um-content{padding:0;}
+			#page1 p.title{color:#555;}
+			#page1 table{border-top:1px solid #ddd;border-bottom:1px solid #ddd;width:100%;margin:10px 0; }
+		</style>
+	</head>
+	<body>
+		<div class="um-page um-win" id="index">
+			<div id="header" class="um-header">
+				<a href="#" class="um-back">返回</a>
+				<h3>文档中心</h3>
+			</div>
+			<div id="main" class="um-content">
+				<ul class="um-tabbar um-tabbar-underline">
+				    <li class="active"><a>最新</a></li>
+				    <li ><a>最热</a></li>
+				    <li><a>未读</a></li>
+				    <li><a>我的</a></li>
+				</ul>
+				<input type="search" class="form-control" placeholder="">
+				<img src="img/loading.gif" id="load" alt="" style="position:fixed;left:60%;top:50%;z-index: 9999;width:50px;height:50px;margin-left:-70px;display: none"/>
+				<div class="um-listview-wrap" id="listview">
+					<ul class="um-list um-no-active" style="border-width:0;"></ul>
+				</div>
+			</div>
+		</div>
+		<div class="um-page um-win" id="page1">
+			<div class="um-header" >
+				<a href="#" class="um-back">返回</a>
+				<h3>文档中心</h3>
+			</div>	
+			<div class="um-content" >
+			 	<p class="title f18 p15 tc"></p>
+			 	<table >
+			 		<tr>
+			 			<td rowspan="2" >&nbsp;&nbsp;<img src="img/icon_m_wev8.jpg" alt="" class="um-circle"/></td> 			 			
+			 			<td>系统管理员</td>
+			 			<td><img src="img/readcount.png" alt="" />0</td>
+			 			<td><img src="img/replycount.png" alt="" />(0)</td>
+			 		</tr>
+			 		<tr><td colspan="3" style="font-size:12px;color:#999;padding-bottom: 5px;">最后修改: 系统管理员 2016-03-12 10:56:22</td></tr>
+			 	</table>
+			 	<p class="p15">&nbsp;&nbsp;“由于企业内分别部署的IT系统仍然有流程、数据的分割独立，因此企业产生越来也多的集成整合需求，也正是客户推动了方案的整合。”维森副总裁杨文元随后带来精彩的主题演讲。杨总形象生动的将企业管理比喻为4*100接力跑，其互相的配合衔接和协同往往成为企业输赢的关键因素之一。通过实际维森的协同OA平台的展示，杨总详细介绍了统一的信息门户与信息共享体系、高效协同的管理+业务全流程管理体系、统一的经营决策分析整合体系以及高效便捷的沟通与协作体系、持续可积累的知识管理体系。维森的OA平台不仅是体现“以人为本”的员工移动商务平台，同时也是快速部署、可拓展、可视化接口的协同管理整合平台。杨总认为管理的背后是责任，而维森OA平台恰恰能帮助企业提供管理的过程和依据，最大化的发挥企业信息化价值。</p>
+				<p class="p15">&nbsp;&nbsp;制造业行业是我国国民经济的基础产业，大力发展制造业是我国经济发展的必由之路。随着制造业企业管理需求的增加和业务的不断扩大，其对信息化建设提出了更高的要求。北自所数十年来专注于制造业信息化的应用和发展，不断创新自有产品，不断满足制造业企业在全新市场环境下的创新需求，实现了业务拓展和业绩的新突破。</p>
+				<p><img class="um-img-responsive p15" src="img/weaver.file.png" alt="" /></p>
+			</div>		 
+		</div>
+		<script>
+		      $(function() {
+				var data ={a: [{
+					"name":"维森企业文化知识地图",
+					"img":"./img/html_wev8.png",
+					"category":"杨文元    2015-09-22 09:50:32"
+				},{
+					"name":"热烈欢迎王伟加入维森产品服务部",
+					"img":"./img/html_wev8.png",
+					"category":"系统管理员    2015-09-07 11:17:57"
+				},{
+					"name":"热烈欢迎李丽加入上海泛微客服中心",
+					"img":"./img/html_wev8.png",
+					"category":"系统管理员    2015-09-07 11:26:30"
+				}],b:[{
+					"name":"集成解决方案",
+					"img":"./img/html_wev8.png",
+					"category":"杨文元    2015-09-22 09:50:32"
+				},{
+					"name":"项目立项内部交接会议纪要",
+					"img":"./img/jpg_wev8.png",
+					"category":"系统管理员    2015-09-07 11:17:57"
+				},{
+					"name":"维森集团及产品发展历程介绍",
+					"img":"./img/jpg_wev8.png",
+					"category":"系统管理员    2015-09-07 11:26:30"
+				}],
+				c:[{
+					"name":"政务版解决方案PPT版",
+					"img":"./img/html_wev8.png",
+					"category":"杨文元    2015-09-22 09:50:32"
+				},{
+					"name":"oa协同办公系统招标公告（模版）",
+					"img":"./img/html_wev8.png",
+					"category":"系统管理员    2015-09-07 11:17:57"
+				},{
+					"name":"招标书&报告模板",
+					"img":"./img/jpg_wev8.png",
+					"category":"系统管理员    2015-09-07 11:26:30"
+				}],
+				d:[{
+					"name":"维森集团一站式服务引爆甬城 2012市场品牌活动圆满收官",
+					"img":"./img/html_wev8.png",
+					"category":"杨文元    2015-09-22 09:50:32"
+				},{
+					"name":"维森集团亮相年度大会 垂直深入集成生态圈",
+					"img":"./img/jpg_wev8.png",
+					"category":"系统管理员    2015-09-07 11:17:57"
+				},{
+					"name":"第四届创新论坛落幕 维森集团斩获多项大奖",
+					"img":"./img/jpg_wev8.png",
+					"category":"系统管理员    2015-09-07 11:26:30"
+				}]
+				};
+				var createRow = function(row) {
+					row = row || {};
+					tpl = '<li class="um-listview-row"><a href="#" class="um-list-item um-swipe-action um-no-icon" style="border-bottom:1px solid #ddd;"><div class="um-list-item-media"><img   height=40 width=30 src="'
+					+ row.img+ '" alt="..."></div><div class="um-list-item-inner1 innerplus" ><div class="um-list-item-body"><h4 class="um-media-heading" style="color:#333;font-size:15px;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;">'				
+					+ row.name +'</h4><p class="um-gray f12">'
+					+ row.category + '</p></div></div> </a></li>';
+							return tpl;
+				}
+				var $list = $("#listview>ul");
+				function tLoad(){
+					$('#load').show();
+					setTimeout( "$('#load').hide()",1000);
+				} 
+				function jiazai(num){
+					 	 if(num===0){	
+					 	 	var data1=[];
+					 	 	for(var i=0;i<5;i++){
+					 	 		 data1=data1.concat(data.a);
+					 	 	}
+					 	 	data1.forEach(function(row){
+							var row = createRow(row);
+							$list.append(row);
+							 });
+					 	 }else if(num===1){
+					 	 	 
+					 	 	var data2=[];
+					 	 	for(var i=0;i<5;i++){
+					 	 		 data2=data2.concat(data.b);
+					 	 	}
+					 	 	data2.forEach(function(row){
+							var row = createRow(row);
+							$list.append(row);
+							 });
+					 	 }else if(num===2){
+					 	 	var data3=[];
+					 	 	for(var i=0;i<5;i++){
+					 	 		 data3=data3.concat(data.c);
+					 	 	}
+					 	 	data3.forEach(function(row){
+							var row = createRow(row);
+							$list.append(row);
+							 });
+					 	 }else{
+					 	 	data.d.forEach(function(row){
+							var row = createRow(row);
+							$list.append(row);
+							 });
+					 	 }
+				 	 }
+				 $('#main ul.um-tabbar li').click(function(){
+					 $('#listview>ul').empty();
+					 tLoad();
+					var  num=$(this).index(); 
+				 	 setTimeout(jiazai(num),5000);
+				 });
+				var data1=[];
+		 	 	for(var i=0;i<5;i++){
+		 	 		 data1=data1.concat(data.a);
+		 	 	}
+		 	 	data1.forEach(function(row){
+				var row = createRow(row);
+				$list.append(row);
+				 });
+		      });   
+		     function jumpPage(id){
+		     	UM.page.changePage({
+		     	target:id
+		     	});
+		     } 
+		     $('#listview ul').on('click','.um-listview-row',function(e){
+		     	jumpPage('#page1');
+				var title=$(e.currentTarget).find('h4').html();
+				$('#page1 p.title').html(title);
+		}); 
+		 </script>
+	</body>
+		
+</html>

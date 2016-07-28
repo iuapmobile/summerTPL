@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html class="um-win">
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/font-icons.css">
+		<link rel="stylesheet" href="css/iuapmobile.um-2.7.0.css">
+<link rel="stylesheet" type="text/css" href="css/iuapmobile.um.listview-2.7.0.css">
+<style>	
+</style>
+ 		<script src="js/Frameworks/iuapmobile.frameworks.core-2.7.0.js" ></script>
+		<script src="js/summer.js" ></script>
+		<script src="js/jquery-2.1.4.min.js" ></script>
+		<script src="js/Frameworks/iuapmobile.frameworks.ui-2.7.0.js" ></script>
+		<script src="js/index.js" ></script>
+
+<script type="text/javascript" src="js/knockout-2.2.0.js"></script>
+<script type="text/javascript" src="js/Frameworks/iuapmobile.frameworks.listview-2.7.0.js"></script>
+	</head>
+	<style type="text/css" media="screen">
+		/*通用样式类*/
+		*{
+			    font-family: 'Microsoft YaHei,arial';
+			    outline: none;
+			    text-shadow: none !important;
+			}
+		 html{font-size:14px;}
+		 #article>div{display:none;text-align:center;}
+		 #article>div.active{display:block;}
+		 #header{background:#007AFD;position: relative;min-height: 45px;z-index: 5;text-align:center;}
+		 #header>p{font-size:18px;line-height:45px;}
+	 	/*消息页样式*/	
+	  	 .um-input-search{background:#d5d5d5;}
+	  	 #message .um-input-search{padding:5px 9px;}
+	  	 #message .um-list .um-list-item-inner:after{border-width:0;}
+	 	#message .um-input-search .form-control{background-position:98% 50%;padding-left:10px;}
+	 	  #message .um-input-search .form-control:focus{width:100%;}	
+	 	/*消息页列表样式*/  
+		#listview .msg-info {
+			position: relative;
+		}
+		 
+		#listview .msg-info .um-badge {
+			position: absolute;
+			right: -10px;
+			font-size: 12px;
+		}
+		#listview .msg-header {
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			background: blue;
+			border-radius: 50%;
+			text-align: center;
+			color: white;
+		}
+		/*通讯录样式类*/
+		
+		#contact span{color:#636363;}
+		#contact p{font-size:1rem;}
+		#contact p.tl{background:#EFEFF4;margin:0 -15px;padding-left:15px;}
+		#contact .um-input-search{padding:5px 9px;}
+		#contact .um-input-search .form-control{background-position:20% 50%;padding-left:25%;height:30px;}
+		#contact .um-input-search .form-control:focus{width:100%;padding-left:8%;background-position:5px 50%;}
+		#contact div.um-grid  div.um-grid-row:first-child  {border-bottom:1px solid #D5D5D5;}
+		#contact div.um-grid-row div.um-border-right{text-align:left;}
+		#contact div.um-grid-row div.um-border-right:first-child{border-right:1px solid #D5D5D5;}
+		
+		/*应用页样式类*/
+		#apply div.um-grid-row div.um-bgc-white a div{color:#868686;}
+		#apply  div.um-bgc-white img{height:30px;width:25px;}
+		#apply  div.um-bgc-white{border-right:1px solid #ebebeb;border-bottom:1px solid #ebebeb;}
+	 	/*我页面样式类*/ 
+	 	#personal  div.um-media-body p{font-size:14px;color:white;}
+	 	/*border-bottom:1px solid #eaeaea;*/
+	 	 
+	 	#user div.um-media .um-media-body{font-size:1.082rem;color:#555;}
+	 	#user div.um-media{border-bottom:1px solid #eaeaea;}
+	 	
+	 	/*页脚样式类*/
+	 	.um-footer{background:#f5f6f6;border-top:1px solid #e6e6e6;}
+	</style>
+	<body>
+		<div class="um-page um-win" id="index">
+			<div id="header" class="">
+				<p class="um-white">消息</p>
+				<div class="um-media tl ml20" id="personal">
+		            <div class="um-media-left">
+		                <img class="um-circle" height=59 width=59 src="img/ldh.png" alt="...">
+		            </div>
+		            <div class="um-media-body ml10">
+		                <p >刘德华</p>
+		                <p id="today">2016年7月21日</p>
+		            </div>
+				</div>
+			</div>
+			<div id="main" class="um-content um-bgc-white">				 				
+					<div  id="article">
+					  <div  id="message" class="active" >
+					  	<!-- 搜索框 -->
+						<div class="um-input-search h40">
+							<input type="search" class="form-control" placeholder="">	 
+						</div>
+						<!-- 信息列表   style='border-bottom:1px solid #e2e2e2;' -->
+						<div class="um-listview-wrap" id="listview" >
+							<ul class="um-list um-no-active" data-bind="foreach: data">
+								<li class="um-listview-row" >
+									<a href="#" class="um-list-item um-swipe-action um-no-icon" style="border-bottom:1px solid #ddd;">
+										 <div class="um-swipe-btns">
+											<span class="um-swipe-btn um-delete">删除</span>
+										</div>  
+										<div class="um-list-item-media msg-info">
+											<img alt="" data-bind="attr:{'src': img}" width=50 class="um-circle">											 
+										</div>
+										<div class="um-list-item-inner" style="width:70%">
+											<div class="um-list-item-body" style="width: 80%;padding-right:15px;">
+												<h4 class="um-media-heading fb f16 um-text-overflow tl" data-bind="text:sender" style='color:#333; '></h4>
+												<p class="um-gray f14 um-text-overflow tl" data-bind="text:lastMsg" style='font-size:0.8rem;'></p>
+											</div>
+										</div> 
+									</a>
+								</li>
+							</ul>
+						</div>
+						 
+					  </div>
+					  <div id="contact" >
+						<div class="um-input-search">
+							<input type="search" class="form-control" placeholder="请输入姓名/首字母/手机号">	 
+						</div>
+						
+	
+						<div class="um-grid um-row">
+							<div class="um-grid-row tc um-border-bottom">
+								<div class="um-border-right um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/tbm.png" width=40 class="um-img-responsive" alt="">
+										<span class="f14 mt5">同部门</span>
+									</a>
+								</div>
+								<div class="um-border-right um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/zz.png" width=40 class="um-img-responsive" alt="">
+										<span  class="f14 mt5">组织</span>
+									</a>
+								</div>
+							</div>
+							<div class="um-grid-row tc">
+								<div class="um-border-right um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/xs.png" width=40 class="um-img-responsive" alt="">
+										<span class="f14 mt5">我的下属</span>
+									</a>
+								</div>
+								<div class="um-border-right um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/everyone.png" width=40 class="um-img-responsive" alt="">
+										<span  class="f14 mt5">所有人</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<p class="tl">最近</p>
+						<div class="returnpeople um-bgc-white">
+							<img src="img/wu.png" width=36  alt="" class="mt10"/>
+							<p class="mt10">暂无最近人员</p>
+						</div> 
+					  </div>
+					  <div id="apply">
+						<div class="um-grid um-row">
+							<div class="um-grid-row tc">
+								<div class="  um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/daiban.png" width=40 class="um-img-responsive" alt="">
+										<div class="f12 mt5">代办事宜</div>
+									</a>
+								</div>
+								<div class="  um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/wdqq.png" width=40 class="um-img-responsive" alt="">
+										<div  class="f12 mt5">我的请求</div>
+									</a>
+								</div>
+								<div class="um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/ybsy.png" width=40 class="um-img-responsive" alt="">
+										<div  class="f12 mt5">已办事宜</div>
+									</a>
+								</div>
+								<div  class="um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/bjsy.png" width=40 class="um-img-responsive" alt="">
+										<div  class="f12 mt5">办结事宜</div>
+									</a>
+								</div>
+							</div>
+							<div class="um-grid-row tc">
+								<div class=" um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/cssy.png" width=40 class="um-img-responsive" alt="">
+										<div class="f12 mt5">抄送事宜</div>
+									</a>
+								</div>
+								<div class="um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/xwzx.png" width=40 class="um-img-responsive" alt="">
+										<div  class="f12 mt5">新闻中心</div>
+									</a>
+								</div>
+								<div class="um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/wdzx.png" width=40 class="um-img-responsive" alt="">
+										<div  class="f12 mt5">文档中心</div>
+									</a>
+								</div>
+								<div class="um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/rw.png" width=40 class="um-img-responsive" alt="">
+										<div  class="f12 mt5">任务</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="um-grid um-row">
+							<div class="um-grid-row tc">
+								<div class="  um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/gzwb.png" width=40 class="um-img-responsive" alt="">
+										<div class="f12 mt5">工作微博</div>
+									</a>
+								</div>
+								<div class="  um-bgc-white">
+									<a href="#" class="um-circle  ">
+										<img src="img/xz.png" width=40 class="um-img-responsive" alt="">
+										<div  class="f12 mt5">协作</div>
+									</a>
+								</div>
+								<div class="um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/xm.png" width=40 class="um-img-responsive" alt="">
+										<div  class="f12 mt5">项目</div>
+									</a>
+								</div>
+								<div  class="um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/hy.png" width=40 class="um-img-responsive" alt="">
+										<div  class="f12 mt5">会议</div>
+									</a>
+								</div>
+							</div>
+							<div class="um-grid-row tc" style='width:75%;'>
+								<div class=" um-bgc-white">
+									<a href="#" class="um-circle ">
+										<img src="img/yj.png" width=40 class="um-img-responsive" alt="">
+										<div class="f12 mt5">邮件</div>
+									</a>
+								</div>
+								<div class="um-bgc-white">
+									<a href="#" class="um-circle  ">
+										<img src="img/rc.png" width=40 class="um-img-responsive" alt="">
+										<div  class="f12 mt5">日程</div>
+									</a>
+								</div>
+								<div class="um-bgc-white">
+									<a href="#" class="um-circle  ">
+										<img src="img/kh.png" width=40 class="um-img-responsive" alt="">
+										<div  class="f12 mt5">客户</div>
+									</a>
+								</div>
+							 
+							</div>
+						</div>
+					  </div>
+					  <div id="user">						
+								<div class="um-media tl   p5 um-bgc-white mt15">						 
+										<div class="um-media-left">
+											<img src="img/sys.png" width=36 class="um-round" alt="">
+										</div>
+										<div class="um-media-body">									 
+												<p>扫一扫</p>								 
+										</div>						
+								</div>
+								<div class="um-media tl   p5 um-bgc-white mt15">
+							 
+										<div class="um-media-left">
+											<img src="img/yjfk.png" width=36 class="um-round" alt="">
+										</div>
+										<div class="um-media-body">
+											 
+												<p>意见反馈</p>
+										 </div>
+								</div>		
+								 
+								<div class="um-media tl   p5 um-bgc-white">
+												<div class="um-media-left">
+													<img src="img/zx.png" width=36 class="um-round" alt="">
+												</div>
+												<div class="um-media-body">									 
+														<p>注销</p>		 
+												</div>
+								</div>
+						
+					  </div>
+					</div>		 
+			</div>
+			<div class="um-footer">
+				<div class="um-tabbar-foot" id='footer'>
+					<a id="item0" href="#" class="um-footerbar-item active" data-tar='#message' > <i class="ti-comment-alt f24"></i>
+					<div class="um-tabbar-item-text">
+						消息
+					</div> </a>
+					<a id="item1" href="#" class="um-footerbar-item"   data-tar='#contact'> <i class="ti-id-badge f24"></i>
+					<div class="um-tabbar-item-text">
+						通讯录
+					</div> </a>
+					<a id="item2" href="#" class="um-footerbar-item "  data-tar='#apply' > <i class="ti-layout-grid2 f24"></i>
+					<div class="um-tabbar-item-text">
+						应用
+					</div> </a>
+					<a id="item3" href="#" class="um-footerbar-item" data-tar='#user'  > <i class="ti-user f24"></i>
+					<div class="um-tabbar-item-text">
+						我
+					</div> </a>					 
+				</div>
+			</div>
+		</div>
+<script>
+$('#personal').css('display','none');	
+ $('#footer>a').click(function(){
+ 	var a=['消息','通讯录','应用',' '];
+ 	$(this).addClass('active').siblings('.active').removeClass('active');
+	var tar=$(this).attr('data-tar');
+	$(tar).addClass('active').siblings('.active').removeClass('active');
+	var num=$(this).index();
+	console.log(num); 
+	if(num===3){
+		$('#user').css('background','#f5f5f5')
+		          .css('margin','0 -15px');
+		$("#header").css('background','#21B0E8')
+					.css('height','140px')
+					.css('padding-top','45px');
+		$('#personal').css('display','block');
+		$('#main').css('background','#f5f5f5');
+		var day=(new Date()).format('yyyy年MM月dd日');
+		 
+		 var week1=(new Date()).getDay();
+			function weekshift(week){
+					switch(week){
+					case 0:
+					week='星期日'; break;
+					case 1:
+					week='星期一'; break;
+					case 2:
+					week='星期二'; break;
+					case 3:
+					week='星期三'; break;
+					case 4:
+					week='星期四'; break;
+					case 5:
+					week='星期五'; break;
+					case 6:
+					week='星期六'; break;
+					 default:
+					 week=''
+				}
+				return week;
+			}
+			week1=weekshift(week1);
+			//console.log(week1);
+			$('#today').html(day+'&nbsp'+week1);
+	}else{
+	
+	//$('#header h3').html(a[num]);	
+	$("#header").css('background','#007AFD').css('height','44px').css('padding-top','0px');;
+	$('#main').css('background','white');
+	$('#personal').css('display','none');
+	}
+	$('#header>p').html(a[num]);	
+	
+});		 
+</script>
+<script>
+			$(function() {
+				//构造控件实例
+				var listview = UM.listview("#listview");
+
+				//Knockout绑定
+				var ViewModel = function() {
+
+				};
+
+				var jsonArray = [{
+					"sender" : "费用报销流程-刘德华-2016-03-17",
+					"img" : "./img/ldh.png", 
+					"lastMsg" : "[费用报销流程]接收时间:2016-04-06 11:13:49 流程已经完毕"	 
+				}, {
+					"sender" : "出差外出流程-邓紫棋-2016-04-16",
+					"img" : "./img/dzq.png",
+					"lastMsg" : "[出差/外出流程]接收时间：2016-04-06 11:13:49 流程已经完毕"					 
+				}, {
+					"sender" : "出差外出流程-梁静茹-2016-04-16",
+					"img" : "./img/ljr.png",
+					"lastMsg" : "[出差/外出流程]接收时间：2016-04-06 11:13:49 流程已经完毕"			
+				}];
+				for(var i=0,len=20;i<len;i++){
+					jsonArray.push({
+						"sender" : "出差外出流程-辣椒哥-2016-04-16",
+						"img" : "./img/portal.jpg",				 
+						"lastMsg" : "[出差/外出流程]接收时间：2016-04-06 11:13:49 流程已经完毕"					 
+					});
+				}
+				var viewModel = new ViewModel();
+				viewModel.data = ko.observableArray(jsonArray);
+				ko.applyBindings(viewModel);
+
+				//添加控件方法
+				/*listview.on("pullDown", function(sender) {
+					//这是可以编写列表下拉加载逻辑，参数sender即为当前列表实例对象
+					 var row = {
+						"sender" : "出差外出流程-邓紫棋-2016-04-16",
+						"img" : "./img/dzq.png",	 
+						"lastMsg" : "[出差/外出流程]接收时间：2016-04-06 11:13:49 流程已经完毕",			 
+					};
+					viewModel.data.unshift(row); 
+					sender.refresh();
+				});*/
+				/*listview.on("pullUp", function(sender) {
+					//这是可以编写列表上拉刷新逻辑，参数sender即为当前列表实例对象
+					 var row = {
+						"sender" : "费用报销流程-刘德华-2016-03-17",
+						"img" : "./img/ldh.png", 
+						"lastMsg" : "[费用报销流程]接收时间:2016-04-06 11:13:49 流程已经完毕",
+					};
+					viewModel.data.push(row); 
+					sender.refresh();
+				});*/
+				listview.on("itemClick", function(sender, args) {
+					//这里可以处理行点击事件，参数sender即为当前列表实例对象，args对象有2个属性，即rowIndex(行索引)和$target(目标行的jquery对象)
+					//alert("您点击了列表第" + (args.rowIndex + 1) + "行！");
+				});
+				listview.on("itemDelete", function(sender, args) {
+					//这是可以编写行删除逻辑，参数sender即为当前列表实例对象，args对象有2个属性，即rowIndex(行索引)和$target(目标行的jquery对象)
+					var item = viewModel.data()[args.rowIndex];
+					//alert("您点击了删除按钮!这一行的数据是" + JSON.stringify(item));
+					 args.$target.slideUp(500, function() {
+					 viewModel.data.remove(item);
+					 }); 
+				});
+				listview.on("itemSwipeLeft", function(sender, args) {
+					//这里可以处理行左滑事件，参数sender即为当前列表实例对象，args对象有2个属性，即rowIndex(行索引)和$target(目标行的jquery对象)
+					sender.showItemMenu(args.$target);
+				});
+				listview.on("tapHold", function() {
+					//这里可以处理长按事件
+					/*console.log("您长按了列表！");*/
+				});
+			});
+
+
+		</script>
+
+</body>		
+</html>

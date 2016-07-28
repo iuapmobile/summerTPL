@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="um-win">
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/font-icons.css">
+		<link rel="stylesheet" href="css/iuapmobile.um.css">
+		<link rel="stylesheet" type="text/css" href="./css/iuapmobile.um.listview-2.7.0.css">
+		<script src="js/jquery-2.1.4.min.js" ></script>
+		<script src="js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="js/summer.js" ></script>
+		<script src="js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="js/index.js" ></script>	 
+		<style>
+		.msg-info {position: relative;}
+		.msg-info .um-badge {position: absolute;right: -10px;font-size: 12px;}
+		.msg-header {width: 40px;height: 40px;line-height: 40px;background: blue;border-radius: 50%;text-align: center;color: white;}
+		*{color:#555;font-family: Arial;}
+			.um-header h3{font-size:18px;font-weight:normal;}
+			#main{background:#f0f0f0;}
+			#main div.um-list{margin:0 -15px;border-top:1px solid #e4e3e6;border-bottom:1px solid #e4e3e6;}
+			#main div.um-list a.um-list-item{border-bottom:1px solid #e4e3e6;margin-left:15px;}
+			#main div.um-list a:last-child{border-bottom:none;}
+			#main div.um-list a.um-list-item div.um-list-item-media{margin-left:0;}
+			#main div.um-list a.um-list-item div.um-list-item-body{padding:10px 0;}
+			#main h5{color:#999;font-size:14px;margin:10px 0px;line-height:1;font-weight:normal;}
+			 
+			 .um-list .um-list-item-inner1 {
+			    position: relative;
+			    display: -webkit-box;
+			    display: box;
+			    display: -webkit-flex;
+			    display: flex;
+			    -webkit-box-pack: justify;
+			    box-pack: justify;
+			    -webkit-justify-content: space-between;
+			    justify-content: space-between;
+			    -webkit-box-align: center;
+			    box-align: center;
+			    -webkit-align-items: center;
+			    align-items: center;
+			    -webkit-box-flex: 1;
+			    box-flex: 1;
+			    -webkit-flex: 1;
+			    flex: 1;
+			    -webkit-align-self: stretch;
+			    align-self: stretch;
+			    z-index: 1;
+			}
+			 
+			 #listview{padding-left:15px;padding-right:15px;} 
+		   .um-input-search{background:#f0f0f0;margin:0;}
+		    .um-input-search i{position: relative;right:25px;color:#aaa;}
+	   		.um-input-search .form-control{border-radius:15px;height:28px;background-position:96% 50%;}
+	  		.um-input-search .form-control:focus{width:100%;}			 
+		</style>
+		<script type="text/javascript" src="./js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="./js/Frameworks/iuapmobile.frameworks.listview-2.7.0.js"></script>
+	</head>
+	<body>
+		<div class="um-page um-win" id="index">
+			<div   class="um-header">
+				<a href="#" class="um-back">返回</a>
+				<h3>邮件</h3>
+			</div>
+			<div id="main" class="um-content p15">
+						<div class="um-list">
+							<a href="#" class="um-list-item" onclick="jumpPage('#page1')">
+								<div class="um-list-item-media">
+									<img src="./img/inbox.png" width=24 class="um-round" alt="">
+								</div>
+								<div class="um-list-item-inner1">
+									<div class="um-list-item-body">
+										收件箱
+									</div>
+								</div>
+							</a>
+							<a href="#" class="um-list-item" onclick="jumpPage('#page1')">
+								<div class="um-list-item-media">
+									<img src="./img/sent.png" width=24 class="um-round" alt="">
+								</div>
+								<div class="um-list-item-inner1">
+									<div class="um-list-item-body">
+										发件箱
+									</div>
+								</div>
+							</a>
+							<a href="#" class="um-list-item" onclick="jumpPage('#page1')">
+								<div class="um-list-item-media">
+									<img src="./img/draft.png" width=24 class="um-round" alt="">
+								</div>
+								<div class="um-list-item-inner1">
+									<div class="um-list-item-body">
+										草稿箱
+									</div>
+								</div>
+							</a>
+							<a href="#" class="um-list-item" onclick="jumpPage('#page1')">
+								<div class="um-list-item-media">
+									<img src="./img/inner.png" width=24 class="um-round" alt="">
+								</div>
+								<div class="um-list-item-inner1">
+									<div class="um-list-item-body">
+										内部邮件
+									</div>
+								</div>
+							</a>
+							<a href="#" class="um-list-item" onclick="jumpPage('#page1')">
+								<div class="um-list-item-media">
+									<img src="./img/starfull.png" width=24 class="um-round" alt="">
+								</div>
+								<div class="um-list-item-inner1">
+									<div class="um-list-item-body">
+										标星邮件
+									</div>
+								</div>
+							</a>
+							<a href="#" class="um-list-item" onclick="jumpPage('#page1')">
+								<div class="um-list-item-media">
+									<img src="./img/junk.png" width=24 class="um-round" alt="">
+								</div>
+								<div class="um-list-item-inner1">
+									<div class="um-list-item-body">
+										已删除
+									</div>
+								</div>
+							</a>
+					</div>
+					<h5>我的文件夹</h5>
+					<div class="um-list">
+							<a href="#" class="um-list-item" onclick="jumpPage('#page1')">
+								<div class="um-list-item-media">
+									<img src="./img/folder.png" width=24 class="um-round" alt="">
+								</div>
+								<div class="um-list-item-inner1">
+									<div class="um-list-item-body">
+										全部
+									</div>
+								</div>
+							</a>
+					</div>
+			</div>
+		</div>		
+		<div class="um-page um-win" id="page1">
+			<div class="um-header" >
+				<a href="#" class="um-back">返回</a>
+				<h3>邮件</h3>
+			</div>
+			<div class="um-input-search h40">
+				<input type="search" class="form-control" placeholder="">				 
+			</div>
+			<div class="um-listview-wrap" id="listview" >
+				<ul class="um-list um-no-active" data-bind="foreach: data">
+					<li class="um-listview-row" >
+						<a href="#" class="um-list-item um-swipe-action um-no-icon" style="border-bottom:1px solid #ddd;">
+							 <div class="um-swipe-btns">
+								<span class="um-swipe-btn um-delete">删除</span>
+							</div>  
+							<div class="um-list-item-media msg-info">
+								<img alt="" data-bind="attr:{'src': img1}" width=20 style='position: relative;top:-12px;'>											 
+							</div>
+							<div class="um-list-item-inner1"   id="inner">
+								<div class="um-list-item-body" style="width:80% padding-right:15px;">
+									<h4 class="um-media-heading fb f16 um-text-overflow tl" data-bind="text:sender" style='color:#333; '></h4>
+									<p class="um-gray f14 um-text-overflow tl" data-bind="text:lastMsg" style='font-size:0.8rem;'></p>
+								</div>
+								<div style='padding-right: 10px;'>
+									<img data-bind="attr:{'src': img2}" width=40 alt="" />
+								</div>
+							</div> 
+						</a>
+					</li>
+				</ul>
+			</div>	 
+		</div>	  
+		<script>
+		$('#inner:after').css('border-width','0');
+			function jumpPage(id){
+				UM.page.changePage({target:id});	 
+			}	
+			/*页面模拟数据*/	 	
+				 $(function () {
+						//构造控件实例
+						var listview = UM.listview("#listview");
+						 
+						//Knockout绑定
+						var ViewModel = function() {
+						};
+						 
+						var jsonArray=[{
+							"sender" : "欢迎体验泛微协同管理平台！",
+							"img1" : "./img/youjian.png", 
+							"img2" : "./img/fav0.png", 
+							"lastMsg" : "发件人: 杨文元 2016-02-17 11:50:56"	 	 
+						}, {
+							"sender" : "付款提醒：万达集团一期项目",
+							"img1" : "./img/youjian.png",
+							"img2" : "./img/fav0.png", 
+							"lastMsg" : "发件人:赵静  2016-02-17 11:50:56"					 
+						}, {
+						"sender" : "欢迎体验泛微协同管理平台！",
+							"img1" : "./img/youjian.png",
+							"img2" : "./img/fav0.png", 
+							"lastMsg" : "发件人:倪云华 2016-02-17 11:50:56"			
+						},
+						 {
+							"sender" : "收文提醒：关于国庆节放假的通知",
+							"img1" : "./img/youjian.png", 
+							"img2" : "./img/fav0.png", 
+							"lastMsg" : "发件人:  2016-02-17 11:50:56"	 
+						}]
+						;
+						var viewModel  = new ViewModel ();
+						viewModel.data = ko.observableArray(jsonArray);
+						ko.applyBindings(viewModel);				
+					 });	 				
+						/*listview.on("itemDelete", function(sender, args) {
+							//这是可以编写行删除逻辑，参数sender即为当前列表实例对象，args对象有2个属性，即rowIndex(行索引)和$target(目标行的jquery对象)
+							var item = viewModel.data()[args.rowIndex];
+							//alert("您点击了删除按钮!这一行的数据是" + JSON.stringify(item));
+							 args.$target.slideUp(500, function() {
+							 viewModel.data.remove(item);
+							 }); 
+						});
+						listview.on("itemSwipeLeft", function(sender, args) {
+							//这里可以处理行左滑事件，参数sender即为当前列表实例对象，args对象有2个属性，即rowIndex(行索引)和$target(目标行的jquery对象)
+							sender.showItemMenu(args.$target);
+						});*/
+				</script>
+	</body>		
+</html>
