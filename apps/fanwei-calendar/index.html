@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="um-win">
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/font-icons.css">
+		<link rel="stylesheet" href="css/iuapmobile.um.css">
+ 		<link rel="stylesheet" href="css/lib/animate.min.css"/>
+    	<link rel="stylesheet" href="css/calendar.css"/>		
+		<script src="js/jquery-2.1.4.min.js" ></script>
+		<script src="js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="js/summer.js" ></script>
+		<script src="js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script type="text/javascript" src="./js/knockout-2.2.0.js"></script>	 
+		<style>
+		/*日程安排列表样式*/
+			.um-process {
+				margin-left: 15px;
+			}
+			.um-process .um-list-item {
+				position: relative;
+				border-left: 2px dotted green;
+			}
+			
+			.um-process .um-list-item:last-child {
+				border-left:none;
+			}
+			
+			.um-process .um-list-item:before {
+			    content: none !important;
+			}
+			.um-process .um-list-item:after {
+				content: url("./img/marker3.jpg");
+				position: absolute;
+				left: -12px;
+				top: 2px;
+				width: 14px;
+			}
+
+			.um-process .um-list-item:first-child:after {
+				content: url("./img/marker1.jpg");
+			}
+
+			.um-process .um-list-item:last-child:after {
+				content: url("./img/marker3.jpg");
+			}
+			/*自定义样式*/
+			* {font-family: arial;-webkit-appearance: none;}
+			#index div.um-content{padding-left:0;padding-right:0;}
+		 	#calendar{background:#fff;padding:0;}
+		 	#calendar>table{color:#333;}
+		 	#calendar>table td.notCurMon{color:#BCB8B9;}
+		 	#calendar>table tr.week td {color:#333;}
+		 	#calendar>table>caption{color:#017AFD;text-align:left;margin-left:8px;}
+		 	#calendar>table td.today{-webkit-border-radius: 50%;background-color: #017afd;color: white;}
+		 	#index .um-list{margin:0;}
+		</style>	
+	</head>
+	<body>
+		<div class="um-page um-win" id="index">
+			<div id="header" class="um-header">
+				<a href="#" class="um-back">返回</a>
+				<h3>日程</h3>
+			</div>
+			<div class="um-content">
+				 <div id="container" class="p10"></div>
+				<div class="um-list">
+					<div class="um-process" data-bind="foreach: data">
+						<a href="#" class="um-list-item">
+						  <div class="um-list-item-inner">
+							  <div class="um-list-item-body">
+								 <p class="f14   ml15"><span data-bind="text:loc"></span>&nbsp;<span data-bind="text:msg"></span></p>
+								 <p class="um-gray um-text-overflow2 f14 mt5 ml15" data-bind="text: time"></p>
+							  </div>
+					      </div> 
+						</a>
+					</div>
+				</div>
+			</div>			 
+		</div>
+   		<script src="js/lib/zepto.min.js"></script>
+		<script src="js/calendar.js"></script>
+		<script src="js/index.js"></script>
+</body>		
+</html>
