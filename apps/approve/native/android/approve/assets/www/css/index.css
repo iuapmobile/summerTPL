@@ -1,0 +1,149 @@
+
+.header-color {
+    background-color: rgb(49, 210, 234);
+    color: #FFF;
+    height: 45px;
+}
+.p0{
+    padding: 0;
+}
+#table-nav .h64 {
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    background-color: #fff;
+    color: rgb(49, 210, 234);
+    border-color: rgb(49, 210, 234);
+    position: relative;
+}
+.btn-new {
+    background-color: #fff;
+    color: #31d2ea;
+    border: none;
+}
+#index .table-row-scroll {
+    box-sizing: border-box;
+    width: auto;
+    background-color: transparent;
+}
+#index .m60 {
+    margin: 10px;
+    margin-top: 74px;
+}
+#table-nav {
+    position: fixed;
+    top: 44px;
+    left:0 ;
+    z-index: 10;
+    display: flex;
+    width: 100%;
+}
+#index .table-row-scroll li{
+    margin-bottom: 10px;
+    background-color: #fff;
+    position: relative;
+}
+#index .um-table-container .item-my{
+    color: #343434;
+    font-size: 21px;
+}
+#index .um-table-container .item-date{
+    margin-top: 5px;
+    color: #9a9a9a;
+    font-size: 18px;
+}
+#index .um-table-container .item-status {
+    margin-top:10px;
+    color: #9a9a9a;
+    font-size: 18px;
+    position: relative;
+}
+#index .um-table-container .item-status::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #dce1e8;
+}
+#index .um-table-container .pass,
+#index .um-table-container .reject
+{
+    position: absolute;
+    width: 95px;
+    height:95px;
+    top: 22px;
+    right: 25px;
+    -webkit-background-size: 75px 75px;
+    background-size: 75px 75px;
+}
+#index .um-table-container .pass {
+    background: url("../img/pass.png") center no-repeat;
+}
+#index .um-table-container .reject {
+    background: url("../img/reject.png") center no-repeat;
+}
+.back-color {
+    color: #fff;
+}
+ .back-color:before {
+    border-color: #fff;
+}
+#approveItem .um-list-group {
+    margin-top: 10px;
+    background-color: #fff;
+}
+#approveItem .um-list-item-static {
+    margin-left: 16px;
+    line-height: 50px;
+    border-bottom: 1px solid #dce1e8;
+    background-color: #fff;
+}
+#approveItem .um-list-item-static a {
+    text-decoration: none;
+    width: 100%;
+    color: #000;
+}
+#common .textarea {
+    font-size: 18px;
+    resize: none;
+    overflow: hidden;
+    width: 65%;
+    min-height:135px;
+    max-height: 200px;
+    color: #9a9a9a;
+    padding: 0;
+    background: hsla(0,0%,100%,0);
+}
+#common .height-auto {
+    height: auto;
+}
+#common label {
+    margin-top: 10px;
+}
+#common .um-box-justify div:nth-of-type(1) {
+    width: 61px;
+    margin-right: 10px;
+}
+#common .um-relative {
+    position: relative;
+}
+#common .um-relative::before {
+    content:'0/200';
+    color: #f35959;
+    font-size:12px;
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+}
+#table-nav .um-br:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 2px;
+    width: 1px;
+    height: 21px;
+    background: #dce1e8;
+    margin-top: -10px;
+}

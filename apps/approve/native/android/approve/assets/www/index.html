@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="um-win">
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/font-icons.css">
+    <link rel="stylesheet" href="css/iuapmobile.um-2.7.0.css">
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/iuapmobile.um.listview-2.7.0.css">
+</head>
+<body>
+<div class="um-page um-win" id="index">
+    <div class="um-header header-color">
+        <h3>审批</h3>
+    </div>
+    <div class="um-content p0">
+        <ul class="um-tabbar um-tabbar-underline " id="table-nav">
+            <li class="active h64 um-br">
+                <span class="right-border">我的申请</span>
+            </li>
+            <li class="h64">
+                <span>我的审批</span>
+            </li>
+        </ul>
+        <div class="um-table-container table-row-scroll m60">
+            <ul class="um-form">
+                <!--<li class="p15">
+                    <div class="item-my">我的【
+                        <span class="item-type">外出申请</span>
+                        】
+                    </div>
+                    <div class="item-date">07月23日 14:21:59</div>
+                    <div class="item-status">待审批</div>
+                    <div>
+                        <i class="pass"></i>
+                    </div>
+                </li>
+                <li class="p15">
+                    <div class="item-my">我的【
+                        <span class="item-type">外出申请</span>
+                        】
+                    </div>
+                    <div class="item-date">07月23日 14:21:59</div>
+                    <div class="item-status">待审批</div>
+                    <div>
+                        <i class="pass"></i>
+                    </div>
+                </li>
+                <li class="p15">
+                    <div class="item-my">我的【
+                        <span class="item-type">外出申请</span>
+                        】
+                    </div>
+                    <div class="item-date">07月23日 14:21:59</div>
+                    <div class="item-status">待审批</div>
+                    <div>
+                        <i class="pass"></i>
+                    </div>
+                </li>
+                <li class="p15">
+                    <div class="item-my">我的【
+                        <span class="item-type">外出申请</span>
+                        】
+                    </div>
+                    <div class="item-date">07月23日 14:21:59</div>
+                    <div class="item-status">待审批</div>
+                    <div>
+                        <i class="reject"></i>
+                    </div>
+                </li>
+                <li class="p15">
+                    <div class="item-my">我的【
+                        <span class="item-type">外出申请</span>
+                        】
+                    </div>
+                    <div class="item-date">07月23日 14:21:59</div>
+                    <div class="item-status">待审批</div>
+                    <div>
+                        <i class="pass"></i>
+                    </div>
+                </li>-->
+            </ul>
+        </div>
+
+        <div class="um-table-container table-row-scroll">
+            <ul class="um-form">
+
+            </ul>
+        </div>
+    </div>
+    <div class="um-footer um-noborder">
+        <a href="#approveItem" class="btn btn-new ">我要申请</a>
+    </div>
+</div>
+<div class="um-page um-win" id="approveItem">
+    <div class="um-header header-color">
+        <a href="#" class="um-back back-color">返回</a>
+
+        <h3>我的审批</h3>
+    </div>
+    <div class="um-content p0">
+        <ul class="um-list-group">
+            <li class="um-list-item um-list-item-static">
+                <a href="#common" class=""> 通用审批</a>
+            </li>
+            <li class="um-list-item um-list-item-static">
+                外出申请
+            </li>
+            <li class="um-list-item um-list-item-static">
+                出差申请
+            </li>
+            <li class="um-list-item um-list-item-static">
+                合同申请
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="um-page um-win" id="common">
+    <div class="um-header header-color">
+        <a href="#" class="um-back back-color">返回</a>
+        <h3>我的审批</h3>
+    </div>
+    <div class="um-content">
+        <label class="um-label um-box-justify">
+            <div>
+                主题<span class="um-red" >*</span>
+            </div>
+            <div>
+                <input type="text" class="form-control tr" placeholder="请输入主题">
+            </div>
+        </label>
+        <label class="um-label um-box-justify height-auto">
+            <div>
+                内容<span class="um-red ">*</span>
+            </div>
+            <div class="um-relative">
+                <textarea cols="30" rows="10" class="textarea form-control " maxlength="200" placeholder="请输入内容..." ></textarea>
+            </div>
+        </label>
+        <label class="um-label um-box-justify">
+            <div>
+                审批人
+            </div>
+            <div>
+                <input type="text" class="form-control tr" placeholder='请选择（必选）'>
+            </div>
+        </label>
+
+    </div>
+    <div class="um-footer um-noborder">
+        <a href="#index" class="btn btn-new ">提交</a>
+    </div>
+</div>
+</div>
+</body>
+<script src="js/Frameworks/iuapmobile.frameworks.core-2.7.0.js"></script>
+<script src="js/summer.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/Frameworks/iuapmobile.frameworks.ui-2.7.0.js"></script>
+<script src="js/index.js"></script>
+</html>

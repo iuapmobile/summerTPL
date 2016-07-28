@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="um-win">
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/font-icons.css">
+    <link rel="stylesheet" href="css/iuapmobile.um-2.7.0.css">
+    <link rel="stylesheet" href="css/index.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+</head>
+<body>
+  <div class="um-page um-win" id="index">
+    <div id="header" class="um-header um-header-style">
+        <h3>工作汇报</h3>
+        <div class="report-classify ">
+            <div class="my-report select">
+                <span>我的汇报</span>
+            </div>
+            <div class="team-report">
+                <span>工作汇报</span>
+            </div>
+        </div>
+    </div>
+      <div id="main" class="um-content um-content-style">
+          <div class="my-report-container">
+              <ul class="um-form">
+                  <li class="um-list-style">
+                      <div class="meeting-report">
+                          <img class="meeting-photo" src="img/header.jpg" alt=""/>
+                          <div class="meeting-header">
+                              <div class="meeting-info">
+                                  <div class="meeting-title">我的工作日报</div>
+                                  <div class="meeting-title"></div>
+                              </div>
+                              <div class="meeting-date">07月02日 星期四</div>
+                          </div>
+                          <div class="meeting-delete">
+                              删除
+                          </div>
+                      </div>
+                      <p class="meeting-content">
+                          今日工作计划：<br/>
+                          1、早上9点拜访客户A确认合同进展顺利 <br/>
+                          2、下午2点与产品团队确认新产品发布计划 <br/>
+                          3、晚上7点组织销售团队进行新产品学习研讨会 <br/>
+                      </p>
+                  </li>
+              </ul>
+          </div>
+          <div class="team-report-container">
+              <img src="img/team.png" alt=""/>
+              <p>您还没有所属的部门</p>
+
+          </div>
+      </div>
+      <div class="um-footer">
+          <a href="#newReport" class="btn btn-nb">
+              新建
+          </a>
+      </div>
+</div>
+<div class="um-page um-win" id="newReport">
+    <div class="um-header um-header-style">
+        <a href="#" class="um-back um-white">返回</a>
+        <h3>客户拜访</h3>
+    </div>
+    <div class="um-content um-content-style">
+        <ul class="um-list-group">
+            <li >
+                <div class="um-label um-box-justify report-type">
+                   <span class="report-type-info">汇报类型</span>
+                    <div class="report-type-item">
+                        <span class="report-type-select">日报</span>
+                        <span>月报</span>
+                    </div>
+                </div>
+                <div class="um-label um-box-justify report-type">
+                    <div class="report-type-info">
+                        <p class="report-day"> 日报日期</p>
+                        <p class="report-date">07月02日 星期四</p>
+                       </div>
+                    <div class="report-type-detail">
+                        <span >昨天</span>
+                        <span class="report-type-select">今天</span>
+                        <span>明天</span>
+                    </div>
+                </div>
+            </li>
+            <li class="um-po">
+                <p class='um-pa'>今日工作计划：</p>
+                <p class='um-pa'>昨日工作总结：</p>
+                <textarea name=""  cols="30" rows="10" class="um-textarea" placeholder="请输入客户拜访纪要。。。" >
+                </textarea>
+                <textarea name=""  cols="30" rows="10" class="um-textarea" placeholder="请输入客户拜访纪要。。。" >
+                </textarea>
+                <div class="font-container">
+                  <span class="font-container-item">
+                      <i class="um-heng"></i>
+                      <i class="um-shu"></i>
+                  </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="um-footer">
+        <a href="#index" class="btn btn-nb">
+            提交
+        </a>
+    </div>
+</div>
+
+
+
+
+</body>
+<script src="js/Frameworks/iuapmobile.frameworks.core-2.7.0.js"></script>
+<script src="js/summer.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/Frameworks/iuapmobile.frameworks.ui-2.7.0.js"></script>
+<script src="js/index.js"></script>
+</html>

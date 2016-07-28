@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="um-win">
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/font-icons.css">
+    <link rel="stylesheet" href="css/iuapmobile.um-2.7.0.css">
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<div class="um-page um-win" id="index">
+    <div id="header" class="um-header um-header-style">
+        <h3>请假</h3>
+    </div>
+
+    <div id="main" class="um-content um-content-style">
+        <div class="um-table-container table-row-scroll">
+            <ul class="um-form">
+               <!-- <li class="p15">
+                    <div class="item-my">
+                        共 <span class="item-long">1</span>天
+                        <span class="item-type">调休</span>
+                    </div>
+                    <div class="item-date">07/26 上午-07/26 下午</div>
+                    <div class="item-status">审批完成</div>
+                    <div>
+                        <i class="pass"></i>
+                    </div>
+                </li>
+                <li class="p15">
+                    <div class="item-my">
+                        共 <span class="item-long">1</span>天
+                        <span class="item-type">调休</span>
+                    </div>
+                    <div class="item-date">07/26 上午-07/26 下午</div>
+                    <div class="item-status">审批完成</div>
+                    <div>
+                        <i class="reject"></i>
+                    </div>
+                </li>
+                <li class="p15">
+                    <div class="item-my">
+                        共 <span class="item-long">1</span>天
+                        <span class="item-type">调休</span>
+                    </div>
+                    <div class="item-date">07/26 上午-07/26 下午</div>
+                    <div class="item-status">审批完成</div>
+                    <div>
+                        <i class="pass"></i>
+                    </div>
+                </li>-->
+            </ul>
+        </div>
+    </div>
+
+    <div class="um-footer">
+        <ul class="table-nav">
+            <li class="h64 um-br">
+                <a href="#askForLeave" class="right-border">我要请假</a>
+            </li>
+            <li class="h64">
+                <a href="#statistics">假单统计</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="um-page um-win" id="askForLeave">
+    <div  class="um-header um-header-style">
+        <a href="#" class="um-back um-white">返回</a>
+        <h3>请假</h3>
+    </div>
+
+    <div  class="um-content um-content-np">
+        <ul class="um-list-group">
+            <li class="um-list-style">
+                <textarea name="" id="" cols="30" rows="10" class="um-textarea" placeholder="请输入公告内容" ></textarea>
+                <div class="leave-type">
+                    <div class="leave-type-container">
+                        <span class="leave-type-item um-bgc-1">事假</span>
+                        <span class="leave-type-item">调休</span>
+                        <span class="leave-type-item">病假</span>
+                        <span class="leave-type-item">年假</span>
+                        <span class="leave-type-item leave-ellipsis">&ensp;。。。</span>
+                        <span class="leave-type-item leave-type-marriage" style="display: none;">婚假</span>
+                    </div>
+                    <div class="leave-type-container" style="display: none;">
+                        <span class="leave-type-item">节育假</span>
+                        <span class="leave-type-item">看护假</span>
+                        <span class="leave-type-item">产检假</span>
+                        <span class="leave-type-item">丧假</span>
+                    </div>
+                </div>
+                <div class="leave-time-container">
+                    <div class="leave-time">请假时间</div>
+                    <div class="show-time">
+                        共<span class="show-time-total">1</span>天
+                       <span class="show-time-detail"> 07/26 上午-07/26 下午</span>
+                    </div>
+                </div>
+                <div class="font-container">
+                  <span class="font-container-item">
+                      <i class="um-heng"></i>
+                      <i class="um-shu"></i>
+                  </span>
+                </div>
+            </li>
+            <li class="um-list-style">
+
+                <div class="leave-choose">审批人
+                    <span class="leave-choose-commander">请选择</span>
+                    <input type="file" class="leave-file"/>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+    <div class="um-footer">
+        <a href="#" class="btn btn-nb">
+            <i></i>
+            提交
+        </a>
+    </div>
+</div>
+<div class="um-page um-win" id="statistics">
+    <div  class="um-header um-header-style">
+        <a href="#" class="um-back um-white">返回</a>
+        <h3>请假</h3>
+    </div>
+    <div  class="um-content um-content-style um-content-po">
+        <div class="um-table-container table-row-scroll">
+            <div class="filter-date-container">
+                <span class="filter-control-left"></span>
+                <span class="fiflte-date"></span>
+                <span class="filter-control-right"></span>
+            </div>
+            <ul class="um-form">
+                 <li class="p15">
+                     <div class="item-my">
+                         我的 共 <span class="item-long">1</span>天
+                         <span class="item-type">调休</span>
+                     </div>
+                     <div class="item-date">07/26 上午-07/26 下午</div>
+                 </li>
+                 <li class="p15">
+                     <div class="item-my">
+                         共 <span class="item-long">1</span>天
+                         <span class="item-type">调休</span>
+                     </div>
+                     <div class="item-date">07/26 上午-07/26 下午</div>
+                     <div class="item-status">审批完成</div>
+                     <div>
+                         <i class="reject"></i>
+                     </div>
+                 </li>
+                 <li class="p15">
+                     <div class="item-my">
+                         共 <span class="item-long">1</span>天
+                         <span class="item-type">调休</span>
+                     </div>
+                     <div class="item-date">07/26 上午-07/26 下午</div>
+                     <div class="item-status">审批完成</div>
+                     <div>
+                         <i class="pass"></i>
+                     </div>
+                 </li>
+            </ul>
+        </div>
+    </div>
+    <div class="um-footer">
+        <a href="#" class="btn btn-nb">
+            导出Excel表格
+        </a>
+    </div>
+</div>
+</body>
+<script src="js/Frameworks/iuapmobile.frameworks.core-2.7.0.js"></script>
+<script src="js/summer.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/Frameworks/iuapmobile.frameworks.ui-2.7.0.js"></script>
+<script src="js/index.js"></script>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html class="um-win">
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/font-icons.css">
+    <link rel="stylesheet" href="css/iuapmobile.um-2.7.0.css">
+    <link rel="stylesheet" href="css/index.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+</head>
+<body>
+<div class="um-page um-win" id="index">
+    <div id="header" class="um-header um-header-style">
+
+        <h3>标题</h3>
+
+        <div class="salary-classify ">
+            <div class="salary-detail select">
+                <span>薪资概览</span>
+            </div>
+            <div class="salary-search">
+                <span >条件查询</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="main" class="um-content um-content-style">
+        <div class="salary-detail-box" >
+            <div class="salary-verify" >
+                <p>为了确保你的薪资安全</p>
+                <p>请点击‘认证’按钮</p>
+                <button class="btn-style">认证</button>
+            </div>
+            <div class="um-box-shadow" >
+                <div class="verify-box">
+                    <div class="password-title">
+                        <input type="password" class="password-input" placeholder="为确保薪资安全，请输入登录密码"/>
+                    </div>
+                    <div class="verify-choose">
+                        <p class="password-cancel">取消</p>
+                        <p class="password-confirm um-color">确定</p>
+                    </div>
+                </div>
+            </div>
+            <div class="salary-no-info">
+                <img src="img/salary-log.png" alt=""/>
+                <p>还没有导入相应月份的工作数据</p>
+                <p>请联系公司相关负责人!</p>
+            </div>
+        </div>
+        <div class="salary-search-box">
+            <ul class="um-list-group">
+                <li >
+                    <div class="um-label um-box-justify">
+                        <div class="condition-choose">姓名</div>
+                        <input type="text" placeholder="18288886666" class="condition-choose-input" disabled/>
+                    </div>
+                </li>
+                <li >
+                    <div class="um-label um-box-justify">
+                        <div class="condition-choose">起始期间</div>
+                        <input type="text" placeholder="请选择日期" class="condition-choose-input" disabled/>
+                    </div>
+                </li>
+                <li >
+                    <div class="um-label um-box-justify">
+                        <div class="condition-choose">终止期间</div>
+                        <input type="text" placeholder="请选择日期" class="condition-choose-input" disabled/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="um-footer">
+        <a href="#" class="btn btn-nb">
+            查询
+        </a>
+    </div>
+
+</div>
+</body>
+<script src="js/Frameworks/iuapmobile.frameworks.core-2.7.0.js"></script>
+<script src="js/summer.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/Frameworks/iuapmobile.frameworks.ui-2.7.0.js"></script>
+<script src="js/index.js"></script>
+</html>

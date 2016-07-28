@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="um-win">
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/font-icons.css">
+    <link rel="stylesheet" href="css/iuapmobile.um-2.7.0.css">
+    <link rel="stylesheet" href="css/index.css" type="text/css" charset="utf-8"/>
+</head>
+<body>
+<div class="um-page um-win" id="index">
+    <div id="header" class="um-header um-header-style">
+        <h3>客户拜访</h3>
+
+        <div class="meeting-classify">
+            <div class="meeting-filter">
+                <span>筛选</span>
+            </div>
+            <div class="meeting-respond">
+                <span>我负责的</span>
+            </div>
+            <div class="meeting-search">
+                <img src="img/search.png" alt="" class="meeting-search-photo"/>
+            </div>
+        </div>
+        <div class="meeting-search-box">
+            <div class="um-input-search">
+                <input type="search" class="form-control" placeholder="客户名称/地址/负责人">
+                <span class="um-input-cancle">搜索</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="main" class="um-content um-content-style">
+        <div class="um-box-shadow"></div>
+        <div class="filter-container">
+            <ul>
+                <li>
+                    <div class="um-label um-box-justify">
+                        <div>负责人</div>
+                        <div>
+                            <span class="choose-respond">请选择负责人</span><i class="ti-angle-right"></i>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <div class="respond-container">
+            <ul>
+                <li>全部</li>
+                <li>我负责的</li>
+            </ul>
+        </div>
+        <div class="meeting-total-container">
+            共有 <span class="meeting-total">2</span>条拜访记录
+        </div>
+        <ul class="um-form">
+            <li class="um-list-style">
+                <div class="meeting-report">
+                    <img class="meeting-photo" src="img/header.jpg" alt=""/>
+
+                    <div class="meeting-header">
+                        <div class="meeting-info">
+                            <div class="meeting-title">我的客户拜访</div>
+                            <div class="meeting-title"></div>
+                        </div>
+                        <div class="meeting-date">07月02日 星期四</div>
+                    </div>
+                    <div class="meeting-delete">
+                        删除
+                    </div>
+                </div>
+                <p class="meeting-content">
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="um-footer">
+        <a href="#newVisit" class="btn btn-nb">
+            新建
+        </a>
+    </div>
+</div>
+<div class="um-page um-win" id="newVisit">
+    <div class="um-header um-header-style">
+        <a href="#" class="um-back um-white">返回</a>
+        <h3>客户拜访</h3>
+    </div>
+    <div class="um-content um-content-style">
+        <ul class="um-list-group">
+            <li >
+                <div class="um-label um-box-justify">
+                    <div class="visit-name">客户名称</div>
+                    <input type="text" placeholder="请选择客户" class="choose-client" disabled/>
+                </div>
+            </li>
+            <li>
+             <div class="um-label um-box-justify um-gbs">
+                 <img src="img/position.png" alt="" class="GBS-logo"/>
+                 <span class="GBS-address">用友产业园西区</span>
+             </div>
+            </li>
+            <li>
+                <textarea name="" id="" cols="30" rows="10" class="um-textarea" placeholder="请输入客户拜访纪要。。。" ></textarea>
+                <div class="font-container">
+                  <span class="font-container-item">
+                      <i class="um-heng"></i>
+                      <i class="um-shu"></i>
+                  </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="um-footer">
+        <a href="#" class="btn btn-nb">
+            提交
+        </a>
+    </div>
+</div>
+</body>
+<script src="js/Frameworks/iuapmobile.frameworks.core-2.7.0.js"></script>
+<script src="js/summer.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/Frameworks/iuapmobile.frameworks.ui-2.7.0.js"></script>
+<script src="js/index.js"></script>
+</html>

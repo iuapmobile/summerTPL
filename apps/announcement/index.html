@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="um-win">
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/font-icons.css">
+    <link rel="stylesheet" href="css/iuapmobile.um-2.7.0.css">
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<div class="um-page um-win" id="index">
+    <div id="header" class="um-header um-header-style">
+        <h3>标题</h3>
+        <span class="um-header-right f24 um-white">×</span>
+    </div>
+    <div id="main" class="um-content um-pn">
+        <ul class="um-form">
+           <!-- <li class="notice-container">
+                <div class="notice-title">
+                   员工工作时间调整
+                </div>
+                <div class="notice-detail">
+                    <div class="notice-date">2016-07-12 14:00:00</div>
+                     <div class="notice-user">李刚</div>
+                </div>
+                <div class="notice-content">待审批待审批待审批待审批待审批待审批待审批待审批</div>
+                <div class="notice-read unread">未读</div>
+            </li>-->
+
+        </ul>
+    </div>
+    <div class="um-footer um-noborder">
+        <a href="#newNotice" class="btn btn-new ">新建公告</a>
+    </div>
+</div>
+<div class="um-page um-win" id="newNotice">
+    <div class="um-header um-header-style">
+        <a href="#" class="um-back um-white">返回</a>
+        <h3>标题</h3>
+        <span class="um-header-right f24 um-white">×</span>
+    </div>
+
+    <div class="um-content um-content-fill">
+        <ul class="um-list-group">
+            <li>
+                <input type="text" placeholder="请输入公告标题" class="um-group-item" />
+            </li>
+            <li>
+                <textarea name="" id="" cols="30" rows="10" class="um-textarea" placeholder="请输入公告内容" ></textarea>
+                <div class="font-container">
+                  <span class="font-container-item">
+                      <i class="um-heng"></i>
+                      <i class="um-shu"></i>
+                  </span>
+                </div>
+                <label class="um-label um-box-justify um-label-item">
+                    <div class="um-w20">发送人：</div>
+                    <div class="um-w70">
+                        <input type="text" class="form-control um-pr" value="李刚" disabled/>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label class="um-label um-box-justify um-label-item">
+                    <div class="um-w20">发送范围：</div>
+                    <div class="um-w70">
+                        <input type="text" class="form-control um-right um-pr" value="全部" disabled/>
+                    </div>
+                </label>
+                <label class="um-label um-box-justify um-label-item">
+                    <div class="um-w20">自动登录</div>
+                    <div class="">
+                        <label class="um-switch1">
+                            <input type="checkbox" value="off" checked="checked">
+                            <div class="um-track">
+                                <div class="um-handle">
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </label>
+            </li>
+        </ul>
+    </div>
+    <div class="um-footer um-noborder">
+        <a href="#index" class="btn btn-new ">发布</a>
+    </div>
+</div>
+</body>
+<script src="js/Frameworks/iuapmobile.frameworks.core-2.7.0.js"></script>
+<script src="js/summer.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/Frameworks/iuapmobile.frameworks.ui-2.7.0.js"></script>
+<script src="js/index.js"></script>
+</html>

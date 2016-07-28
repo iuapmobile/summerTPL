@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class="um-win">
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/font-icons.css">
+    <link rel="stylesheet" href="css/iuapmobile.um-2.7.0.css">
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<div class="um-page um-win" id="index">
+    <div id="header" class="um-header um-header-style">
+        <h3>会议通知</h3>
+    </div>
+
+    <div id="main" class="um-content um-content-np">
+        <ul class="um-list-group">
+            <li class="um-list-style">
+                <textarea cols="30" rows="10" class="um-textarea" placeholder="告诉大家会议概要的内容和需要准备的资料"></textarea>
+            </li>
+            <li class="um-list-style">
+                <input type="text" class="meeting-address" placeholder="请输入会议地址"/>
+            </li>
+            <li class="um-list-style">
+                <div class="leave-choose">开始时间
+                    <input type="text" class="leave-choose-commander" value='请选择'/>
+                </div>
+            </li>
+            <li class="um-list-style">
+                <label class="um-check-inline um-label-style">
+                    <input name="um-checkbox-inline" type="checkbox" value="自动登录" checked>
+                    <span class="um-icon-checkbox um-css3-vc"></span>
+                    <span class="um-black ml5 f16">免费短信通知大家及时参加会议</span>
+                </label>
+            </li>
+        </ul>
+    </div>
+
+    <div class="um-footer">
+        <a href="#" class="btn btn-nb">
+            发起会议并召集小伙伴
+        </a>
+    </div>
+</div>
+</body>
+<script src="js/Frameworks/iuapmobile.frameworks.core-2.7.0.js"></script>
+<script src="js/summer.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/iscroll.js"></script>
+<script src="js/Frameworks/iuapmobile.frameworks.ui-2.7.0.js"></script>
+<script src="js/index.js"></script>
+</html>

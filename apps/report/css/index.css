@@ -1,0 +1,279 @@
+.um-header-style {
+    background: rgb(1, 211, 134);
+    color: #fff;
+    border-bottom: 0;
+}
+.btn-nb {
+    border-radius:0;
+    border: none;
+    color: #01d386;
+    border-top:1px solid #bdbdbd;
+}
+.report-classify {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    color: #3f3f3f;
+    border-bottom: 1px solid #bdbdbd;
+}
+.my-report,
+.team-report {
+    flex:2;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    box-align:center;
+    padding-top: 10px;
+}
+.my-report span,
+.team-report span {
+    flex: 1;
+    border-right: 1px solid #bdbdbd;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    font-size: 15px;
+}
+.team-report span {
+	border-right:0;
+}
+.um-content-style {
+    padding: 0;
+    position: relative;
+}
+
+.um-list-style {
+    overflow: hidden;
+    margin-top: 10px;
+    padding-bottom: 12px;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+.meeting-report {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 12px;
+}
+.meeting-photo {
+    width: 45px;
+    height:45px;
+    border-radius:6px;
+    cursor: pointer;
+}
+.meeting-header {
+    width: 75%;
+    -webkit-box-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 12px;
+}
+.meeting-info {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-box-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: flex;
+}
+.meeting-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 15px;
+}
+.meeting-date {
+    color: #9a9a9a;
+    padding-top: 4px;
+    font-size:13px;
+}
+.meeting-delete {
+    font-size: 14px;
+    height: 35px;
+    width: 65px;
+    margin-top: 6px;
+    border: 1px solid #dce1e8;
+    border-radius: 7px;
+    color: #9a9a9a;
+    line-height: 35px;
+    text-align: center;
+}
+.meeting-content {
+    padding:0 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-height: 1.3;
+    max-height: 104px;
+    box-sizing: border-box;
+    font-size:14px;
+}
+/*新建工作报告界面*/
+.um-white {
+    color: #fff ;
+}
+.um-white:before {
+    border-color: #fff;
+}
+.um-list-group {
+    list-style: none;
+}
+
+.um-list-group li {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #fff;
+}
+
+.um-list-group li .um-textarea {
+    display: block;
+    width: 100%;
+    height: 150px;
+    border: none;
+    font-size: 15px;
+    outline:none;
+    color:#000;
+    font-weight: 500;
+    padding-top: 1px;
+}
+.um-list-group li .um-textarea:nth-of-type(1){
+    height: 100px;
+}
+.um-list-group li .font-container {
+    width: 100%;
+    height: 100px;
+    padding-left: 20px;
+    padding-right: 13px;
+    position: relative;
+    padding-top: 30px;
+    border-top: 1px solid #bdbdbd;
+}
+
+.um-list-group li .font-container-item {
+    width: 60px;
+    height: 60px;
+    border: 1px dashed #abb1b3;
+    border-radius: 10px;
+    position: relative;
+    display: block;
+}
+
+.um-list-group li .um-heng {
+    display: block;
+    font-weight: normal;
+    width: 30px;
+    height: 1px;
+    border-top: 1px solid #abb1b3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -15px;
+}
+
+.um-list-group li .um-shu {
+    font-style: normal;
+    width: 1px;
+    height: 30px;
+    border-left: 1px solid #abb1b3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -15px;
+}
+.visit-name {
+    flex:1;
+    padding-left: 20px;
+    font-size: 15px;
+}
+#index .select {
+    color: #01d386;
+    border-bottom: 2px solid #01d386;
+}
+.team-report-container {
+    display: none;
+
+    text-align: center;
+}
+.team-report-container img  {
+    width: 248px;
+    height:234px;
+    display: block;
+    margin: 100px auto;
+    margin-bottom: 20px;
+}
+/*表单样式*/
+.report-type {
+    width: 100%;
+    height: 64px;
+    line-height: 64px;
+    margin: 0;
+    padding-left: 20px;
+    font-size: 15px;
+}
+.report-type:nth-of-type(1) {
+    border-bottom: -1px solid #bdbdbd;
+}
+.report-type-info {
+    height: 64px;
+}
+.report-type-info p {
+    height: 50%;
+    line-height: 32px;
+    margin: 0;
+    padding: 0;
+
+}
+.report-type-info p:nth-of-type(2){
+    font-size: 13px;
+    color: #9a9a9a;
+}
+
+.report-type-item,
+.report-type-detail{
+    width: 100px;
+    display: flex;
+    flex-direction:row;
+}
+.report-type-detail {
+    width: 150px;
+}
+.report-type-item span ,
+.report-type-detail span{
+    flex: 1;
+    font-size:12px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin-right: 10px;
+    border-radius:10px;
+    background-color: #fdfdfd;
+    border: 1px solid #e3e3e3;
+}
+#newReport .report-type-select {
+    background-color: #01d386;
+    border: 1px solid #01d386;
+}
+.um-po {
+    position: relative;
+}
+.um-pa {
+    position: absolute;
+    font-size:15px;
+    margin-left: 20px;
+    left: 0;
+}
+.um-pa:nth-of-type(1){
+    top: 0;
+}
+.um-pa:nth-of-type(2){
+    top: 100px;
+}
